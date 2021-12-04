@@ -1,0 +1,41 @@
+Options +FollowSymlinks
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+     RewriteCond %{REQUEST_URI} ^/(uploads)
+     RewriteRule ^uploads/(.*)$ uploads/$1 [L]
+
+
+     RewriteCond %{REQUEST_URI} ^/source/css/(img)
+     RewriteRule ^source/css/img/(.*)$ frontend/web/source/img/$1 [L]
+
+     RewriteCond %{REQUEST_URI} ^/(img)
+     RewriteRule ^img/(.*)$ frontend/web/source/img/$1 [L]
+
+    # deal with backend first
+    RewriteCond %{REQUEST_URI} ^/(backend)
+    RewriteRule ^backend/assets/(.*)$ backend/web/assets/$1 [L]
+    RewriteRule ^backend/css/(.*)$ backend/web/css/$1 [L]
+    RewriteRule ^backend/plugins/(.*)$ backend/web/plugins/$1 [L]
+    RewriteRule ^backend/js/(.*)$ backend/web/js/$1 [L]
+    RewriteRule ^backend/img/(.*)$ backend/web/img/$1 [L]
+
+    RewriteCond %{REQUEST_URI} !^/backend/web/(assets|css)/
+    RewriteCond %{REQUEST_URI} ^/(backend)
+    RewriteRule ^.*$ backend/web/index.php [L]
+
+
+    RewriteCond %{REQUEST_URI} ^/(assets|css|svg)
+    RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
+    RewriteRule ^css/(.*)$ frontend/web/css/$1 [L]
+    RewriteRule ^source/(.*)$ frontend/web/source/$1 [L]
+    RewriteRule ^svg/(.*)$ frontend/web/source/svg/$1 [L]
+
+
+    RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|source|plugins|js)/
+    RewriteCond %{REQUEST_URI} !index.php
+    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^.*$ frontend/web/index.php
+</IfModule>
