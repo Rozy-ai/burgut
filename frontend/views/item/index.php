@@ -31,8 +31,8 @@ if (!isset($view)){
         $view = 'blog-list';
     } elseif ($catCode == 'our_works'){
         $view = 'portfolio-list';
-    } elseif ($catCode == 'partners'){
-        $view = 'partners-list';
+    // } elseif ($catCode == 'partners'){
+    //     $view = 'partners-list';
     } elseif ($catCode == 'magazin'){
         $view = 'category-list';
         $cat = 'magazin';

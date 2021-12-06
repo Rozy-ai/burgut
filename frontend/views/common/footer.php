@@ -21,18 +21,6 @@ $ownInfo = \common\models\OwnerContact::find()->one();
 
           </p>
           <br>
-          <hr><br>
-
-          <div class="social_icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-send "></i></a>
-            <a href="#"><i class="fa fa-youtube-play "></i></a>
-            <a href="#"><i class="fa fa-instagram "></i></a>
-
-
-
-          </div>
-
         </div>
         <div class="col d-flex justify-content-center">
           <div class="center_footer">
@@ -66,13 +54,23 @@ $ownInfo = \common\models\OwnerContact::find()->one();
             <i class="fa fa-phone"></i><span><?= yii::t('app', 'Phone') ?>: <p><a href="tel: <?= $ownInfo->my_phone ?>">
               <?= $ownInfo->my_phone ?></a> </p> </span> 
 
-            <i class="fa fa-envelope"></i> <span><?= yii::t('app', 'Email') ?>: <p> <a href="mailto:<?= $ownInfo->my_email ?>">
-              <?= $ownInfo->my_email ?></a></p></span>
+        <!--     <i class="fa fa-envelope"></i> <span><?php //echo yii::t('app', 'Email') ?>: <p> <a href="mailto:<?php //echo $ownInfo->my_email ?>">
+              <?php //echo $ownInfo->my_email ?></a></p></span> -->
 
             <i class="fa fa-clock-o"></i> <span><?= yii::t('app', 'Working time') ?>: <p>
               <?= yii::t('app', 'Mon - Sun / 9:00 AM - 8:00 PM') ?></p></span>
           </div>
         </div>
       </div>
+    </div>
+    <hr>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <?= Yii::t('app','All rights reserved.') ?><?= date('Y') ?> &copy; <?php //CommonInfo::info('footer_working_time') ?><?=yii::t('app', 'site_name')?>
+
+            </div>
+
+        </div>
     </div>
   </footer>

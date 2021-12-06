@@ -155,7 +155,7 @@ $advantages = ItemWrapper::find()->where(['category_id' => $catId, 'status' => '
 $category = CategoryWrapper::find()->where(['code' => 'magazin'])->one();
 $catId = $category->id;
 $new_products = ItemWrapper::find()->where(['parent_category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->orderBy('id desc')->all();
-$hit_products = ItemWrapper::find()->where(['parent_category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->orderBy('raiting desc')->all();
+// $hit_products = ItemWrapper::find()->where(['parent_category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->orderBy('raiting desc')->all();
 $ownInfo = \common\models\OwnerContact::find()->one();
 $category_blog = \common\models\wrappers\CategoryWrapper::find()->where(['code' => 'blog'])->one();
 $catId = $category_blog->id;
@@ -175,7 +175,7 @@ $partners = ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'
             'ownInfo' => $ownInfo,
             'blogs' => $blogs,
             'category_blog' => $category_blog,
-            'partners' => $partners,
+            'category' => $category,
 //            'aboutCategory' => $aboutCategory,
 //            'itemCategory' => $itemCategory,
 //            'eventCategory' => $eventCategory,

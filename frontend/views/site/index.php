@@ -53,9 +53,9 @@ $this->title = Yii::t('app', 'Home');
       <?=html::img($imagePath,['class'=>'corusel_top_img','alt'=>'...'])?>
                 <div class="carousel-caption d-none d-md-block">
             <div class="slider_text_block">
-              <div class="layer-3-3">
-                <h1 class="a-1"><?=$slider->title?></h1>
-              </div>
+          <!--     <div class="layer-3-3">
+                <h1 class="a-1"><?php //echo $slider->title?></h1>
+              </div> -->
               <div class="layer-1-3">
                 <p class="a-2"><?=$slider->description?></p>
               </div>
@@ -108,9 +108,8 @@ $this->title = Yii::t('app', 'Home');
             <?php if(isset($product->skidka)){
                         echo " <span class='skidka'>".$product->skidka."</span>";
                     } ?>
-            <div class="eye select_box d-flex justify-content-center align-items-center"><a href="<?= '/item/'.$product->id; ?>"><i class="fa fa-eye"></i></a></div>
+
          <!--    <div class="reload select_box d-flex justify-content-center align-items-center"><a href="/"><i class="fa fa-refresh"></i></a></div> -->
-            <div class="like select_box d-flex justify-content-center align-items-center"><a class="like-Unlike" href="<?= Url::to(['site/like', 'id' => $product->id]) ?>" data-id="<?= $product->id?>"><i class="fa fa-heart-o"></i></a></div>
 <!--             <div class="market select_box d-flex justify-content-center align-items-center"><a href="#"><i class="fa fa-cart-plus"></i></a></div> -->
             <div class="card-body">
               <h5 class="card-title text-center"><?= $product->title ?></h5>
@@ -254,31 +253,7 @@ $this->title = Yii::t('app', 'Home');
       </div>
     </div>
   </section>
-  <section class="partners">
 
-
-    <div class="center slider">
- <?php foreach ($partners as $partner): ?>
-
-        <?=html::img($partner->getThumbPath(),['class' => 'my_img', 'style' => 'height : 150px'])?>
-      <?php endforeach; ?>
-
-    </div>
-    <!--   <p class="text-center my-4"> -->
-                <?php 
-                // echo html::a(yii::t('app', 'Show all'),$category->url, ['class' => 'see_all_btn'])
-                ?>
-             <!--    <a href=" -->
-                <?php  
-                // echo $category->url
-                ?>
-              <!--   "><button type="button" class="btn btn-light" style="border:2px solid black"> --><?php 
-                // echo yii::t('app', 'Show all') 
-                ?>
-                  
-<!--                 </button></a>
-</p> -->
-  </section>
 
   <?php
   // $this->registerJS('

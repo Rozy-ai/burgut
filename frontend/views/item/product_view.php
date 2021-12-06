@@ -142,10 +142,9 @@ $projects = \common\models\wrappers\ItemWrapper::find()->where(['parent_category
             <?php if(isset($product->skidka)){
                         echo " <span class='skidka'>".$product->skidka."</span>";
                     } ?>
-            <div class="eye select_box d-flex justify-content-center align-items-center"><a href="<?= '/item/'.$product->id; ?>"><i class="fa fa-eye"></i></a></div>
-         <!--    <div class="reload select_box d-flex justify-content-center align-items-center"><a href="/"><i class="fa fa-refresh"></i></a></div> -->
-            <div class="like select_box d-flex justify-content-center align-items-center"><a class="like-Unlike" href="<?= Url::to(['site/like', 'id' => $product->id]) ?>" data-id="<?= $product->id?>"><i class="fa fa-heart-o"></i></a></div>
-<!--             <div class="market select_box d-flex justify-content-center align-items-center"><a href="#"><i class="fa fa-cart-plus"></i></a></div> -->
+ 
+
+
             <div class="card-body">
               <h5 class="card-title text-center"><?= $product->title ?></h5>
             </div>
