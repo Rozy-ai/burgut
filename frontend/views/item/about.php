@@ -9,11 +9,16 @@ use yii\helpers\Html;
 ?>
 
  			<div class="col-md-6">
- 				 <h3 style="margin-bottom: 30px"> «Bürgüt»</h3>
+ 				 <h3 style="margin-bottom: 30px"> Saparmyrat Nyýazow adyndaky dokma toplumy</h3>
                  <p><i>"<?=$category->description?>"</i></p>
-                        <p style=" color: #828699; margin-bottom: 30px">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil repellat sed quisquam suscipit totam inventore eligendi amet iste maxime, eius laudantium eveniet facilis, iusto voluptate. Nulla, nisi dolorem dicta aspernatur!
-    Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Dignissimos atque pariatur voluptate, asperiores provident odio obcaecati corporis quidem temporibus impedit iste! Animi, possimus quos accusantium. Magni praesentium incidunt suscipit accusantium?
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti nulla cumque rem a atque tempora, eveniet architecto harum, neque mollitia vel temporibus ducimus ad, ea dolorum inventore accusamus possimus dolore.</p>
+                        <p style=" margin-bottom: 30px">
+                    
+                          Esaslandyrlan sene: 12.05.1997
+<br>
+Önümler: Trikotaž geýimler we matalar
+<br>
+Gypjak şäherçesindäki Saparmyrat Nyýazow adyndaky dokma toplumy 1997-nji ýylyň 12-nji maýynda dabaraly ýagdaýda açylyp ulanylmaga berildi.
+                        </p>
                         <div class="btn_black_div">
                           <?php 
 $category_products = \common\models\wrappers\CategoryWrapper::find()->where(['code' => 'magazin'])->one();
