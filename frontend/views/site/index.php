@@ -134,16 +134,10 @@ $this->title = Yii::t('app', 'Home');
 
     <section class="about_us">
     <div class="container">
-      <?php 
 
-       ?>
       <div class="row justify-content-between">
         <?php foreach ($advantages as $advantage): ?>
-          <?php 
-          $icon = json_decode($advantage->icon , true);
-       
 
-           ?>
                       <div class="col-lg-4 col-sm-12 bg-white function_box">
                 <div class="overlay_function_box">
                     <div class="overlay_function_box_top"></div>
@@ -152,7 +146,6 @@ $this->title = Yii::t('app', 'Home');
                 <div class="box-body">
                   <div class="box-body-img">
               
-                        <i class="<?=$icon['class']?>"> </i>
                         <h3 class=""><?=$advantage->title?></h3>
                     </div>
                  
