@@ -14,7 +14,6 @@ use Yii;
  * @property int $visited_count
  * @property int $sort_order
  * @property int $status
- * @property int $icon
  * @property int $is_main
  * @property int $is_menu
  * @property int $type
@@ -45,7 +44,7 @@ class Item extends CommonActiveRecord {
             [['category_id', 'parent_category_id', 'visited_count', 'sort_order', 'status', 'is_main', 'is_menu', 'type'], 'integer'],
             [['status', 'type'], 'required'],
             [['date_created', 'date_modified'], 'safe'],
-            [['alias', 'author','icon', 'location', 'edited_username', 'create_username'], 'string', 'max' => 255],
+            [['alias', 'author', 'location', 'edited_username', 'create_username'], 'string', 'max' => 255],
         ];
     }
 
@@ -65,7 +64,6 @@ class Item extends CommonActiveRecord {
             'is_main' => Yii::t('app', 'Is Main'),
             'is_menu' => Yii::t('app', 'Is Menu'),
             'type' => Yii::t('app', 'Type'),
-            'icon' => Yii::t('app', 'Icon'),
             'author' => Yii::t('app', 'Author'),
             'location' => Yii::t('app', 'Location'),
             'edited_username' => Yii::t('app', 'Edited Username'),

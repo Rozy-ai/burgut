@@ -21,7 +21,6 @@ use common\models\wrappers\TagWrapper;
  * @property integer $id
  * @property string $title
  * @property string $description
- * @property string $icon
  * @property string $alias
  * @property integer $category_id
  * @property integer $parent_category_id
@@ -87,7 +86,7 @@ class ItemWrapper extends Item
     {
         return \yii\helpers\ArrayHelper::merge(parent::rules(), [
             [['title', 'description', 'content'], 'string'],
-            [['tagNames', 'title', 'description', 'content', 'category_id', 'parent_category_id', 'title_ru', 'description_ru', 'title_en', 'description_en', 'icon'], 'safe'],
+            [['tagNames', 'title', 'description', 'content', 'category_id', 'parent_category_id', 'title_ru', 'description_ru', 'title_en', 'description_en'], 'safe'],
         ]);
     }
 //
