@@ -71,7 +71,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header_info{
-  font-size: 14px;
+  font-size: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 /*  font-family: "RubikRegular","Arial", sans-serif;*/
 }
 .header_info a{
@@ -131,6 +133,7 @@ ul.navbar-nav li.nav-item a.nav-link {
   color: #00a551;
   transition: 0s;
   position: relative;
+  font-size: 20px;
 } 
 ul.navbar-nav li.nav-item a.nav-link:hover {
   color: #198754;
@@ -220,8 +223,7 @@ ul.dropdown-menu {
 }
 .logo img{
   width: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  height: 100px;
 }
 /*.carousel-inner .carousel-item{
   height: 70vh;
@@ -401,7 +403,7 @@ section.write .write_form_in>div{
   padding-left: 0;
 }
 footer{
-  background: #00a551;
+  background: #636464;
   padding:60px 0 50px;
   color: #fff;
 }
@@ -463,7 +465,7 @@ section.blog button.btn-light{
   margin-top: 50px;
 }
 section.blog img{
- max-height: 400px;
+ height: 220px;
 }
 section.blog .card-title{
  margin-top: 10px;
@@ -782,7 +784,9 @@ section.index_tab .card{
   border: none;
 }
 section.index_tab .card-body{
+  
   background: #fff;
+  min-height: 200px;
 }
 section.index_tab .card-title{
   text-transform: uppercase;

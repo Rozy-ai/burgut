@@ -163,42 +163,6 @@ $this->title = Yii::t('app', 'Home');
     </div>
 
   </section>
-
-  
-  <section class="blog">
-    <div class="container">
-
-      <h2><?= yii::t('app' , 'News') ?></h2>
-      <div class="row">
-        <div class="regular slider">
-
-
-           <?php foreach ($blogs as $key => $blog): ?>
-            <?php  $date = yii::$app->controller->renderDateToWord($blog->date_created);
-?>
-
-          <div class="card" style="width: 18rem;">
-            <?=html::img($blog->getThumbPath(),['class' => 'card-img-top','alt'=>'$blog->title']) ?>
-            <div class="card-body">
-              <span><?= $date ?></span>
-              <a href="<?= $blog->url; ?>" style="text-decoration: none; color: #000;"> 
-              <h5 class="card-title"><?= $blog->title; ?></h5>
-            </a>
-              <p class="card-text"><?= $blog->description; ?></p>
-            </div>
-          </div>
-           <?php endforeach; ?>
-
-        </div>
-
-        <div class="col-12 d-flex justify-content-center">
-          <a href="<?=$category_blog->url?>"><button type="button" class="btn btn-light" style="border:2px solid black"><?= yii::t('app', 'Show all') ?></button></a>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
   <section class="about">
 
 
@@ -215,37 +179,41 @@ $this->title = Yii::t('app', 'Home');
     </div>
   </section>
 
-  <section class="write">
+  <section class="blog">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-sm-5 d-flex justify-content-center">
-          <h3><?= yii::t("app", "Subscribe to us") ?></h3>
-          
-        </div>
-        <div class="col-sm-7 d-flex justify-content-end">
 
-    <?php $form = ActiveForm::begin([
-            'action' => yii\helpers\Url::to(['site/subscribe'])]); ?>
-        <div class="row write_form_in">
-          <div class="col-8">
-            <?=$form->field($model, 'email')->textInput(['placeholder'=>yii::t('app', 'Enter your email address'), 'class' =>'form-control'])->label(false);?>
+      <h2><?= yii::t('app' , 'News') ?></h2>
+      <div class="row">
+        <div class="regular slider">
+
+
+           <?php foreach ($blogs as $key => $blog): ?>
+            <?php  $date = yii::$app->controller->renderDateToWord($blog->date_created);
+?>
+
+          <div class="card" style="width: 18rem;position: relative;">
+            <?=html::img($blog->getThumbPath(),['class' => 'card-img-top','alt'=>'$blog->title']) ?>
+            <div class="card-body">
+              <span><?= $date ?></span>
+              <a href="<?= $blog->url; ?>" style="text-decoration: none; color: #000;"> 
+              <h5 class="card-title"><?= $blog->title; ?></h5>
+            
+              <p class="card-text"><?= $blog->description; ?></p>
+              <p style="position: absolute;bottom: 0"><?= yii::t('app','Read more') ?></p>
+              </a>
+            </div>
           </div>
-          <div class="col-4">
-            <?=Html::submitButton(yii::t("app", "subscribe") ,  ['class' => 'btn btn-primary mb-2']); ?>
-          </div>
-        </div>
-    
-    
-    <?php ActiveForm::end(); ?>
+           <?php endforeach; ?>
 
-    <div style="clear:both;"></div>
-
-       
         </div>
+
 
       </div>
     </div>
+
   </section>
+
+
 
 
   <?php

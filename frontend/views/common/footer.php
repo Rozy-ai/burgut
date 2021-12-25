@@ -16,7 +16,7 @@ $ownInfo = \common\models\OwnerContact::find()->one();
         <div class="col left_footer">
           <img src="/img/logo.jpg" alt="">
           <br><br>
-          <p><?= yii::t('app', 'Production of various plastic products for household, food and technical purposes.') ?>
+          <p style="margin-right: 5%;text-transform:uppercase"><?= yii::t('app', 'site_name') ?>
 
 
           </p>
@@ -24,7 +24,7 @@ $ownInfo = \common\models\OwnerContact::find()->one();
         </div>
         <div class="col d-flex justify-content-center">
           <div class="center_footer">
-            <h3><?= yii::t('app', 'Useful') ?></h3><br>
+            <h3><?= yii::t('app', 'Pages') ?></h3><br>
             <ul>
                               <?php
                             $menuItems == array_pop($menuItems);
@@ -50,15 +50,21 @@ $ownInfo = \common\models\OwnerContact::find()->one();
 
             <i class="fa fa-map-marker"></i> <span><?= yii::t('app', 'Address') ?>: <p>
               <?= $ownInfo->my_address ?></p></span>
-
-            <i class="fa fa-phone"></i><span><?= yii::t('app', 'Phone') ?>: <p><a href="tel: <?= $ownInfo->my_phone ?>">
-              <?= $ownInfo->my_phone ?></a> </p> </span> 
+ <?php 
+            $string = $ownInfo->my_phone;
+            $phones   = preg_split('/\s+/', $string); 
+             ?>
+            <i class="fa fa-phone"></i><span><?= yii::t('app', 'Phones') ?>:
+             <?php foreach ($phones as $phone) : ?>
+              <p style="margin-bottom: 0px"><a href="tel: <?=  $phone ?>">
+              <?=  $phone ?></a> </p> 
+            <?php endforeach; ?>
+            </span> 
 
         <!--     <i class="fa fa-envelope"></i> <span><?php //echo yii::t('app', 'Email') ?>: <p> <a href="mailto:<?php //echo $ownInfo->my_email ?>">
               <?php //echo $ownInfo->my_email ?></a></p></span> -->
 
-            <i class="fa fa-clock-o"></i> <span><?= yii::t('app', 'Working time') ?>: <p>
-              <?= yii::t('app', 'Mon - Sun / 9:00 AM - 8:00 PM') ?></p></span>
+            
           </div>
         </div>
       </div>
