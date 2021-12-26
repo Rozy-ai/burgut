@@ -85,10 +85,12 @@ $this->title = Yii::t('app', 'Home');
 
 
   <section class="index_tab">
-    <div class="container">
+    <div class="container-fluid">
 <ul class="nav nav-tabs" id="myTab">
   <li class="nav-item" role="presentation">
+    <!-- <a href="<?php// echo $category->url?>"> -->
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><?= yii::t('app', 'New  ') ?></button>
+  <!-- </a> -->
   </li>
 
 </ul>
@@ -121,28 +123,27 @@ $this->title = Yii::t('app', 'Home');
         </div>
       </div>
       <div class="clearfix"></div>
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-          <a href="<?=$category->url?>"><button type="button" class="btn btn-light" style="border:2px solid black; background: #fff"><?= yii::t('app', 'Show all') ?></button></a>
-        </div>
-      </div>
+
   
 
 
     </div>
   </section>
 
-    <section class="about_us">
+    <section class="about_us" style="background-color: #EDF8FE">
     <div class="container">
+      <h2><?= yii::t('app' , 'Advantages') ?></h2>
+
+
 
       <div class="row justify-content-between">
         <?php foreach ($advantages as $advantage): ?>
 
                       <div class="col-lg-4 col-sm-12 bg-white function_box">
-                <div class="overlay_function_box">
+<!--                 <div class="overlay_function_box">
                     <div class="overlay_function_box_top"></div>
                     <div class="overlay_function_box_bottom"></div>
-                </div>
+                </div> -->
                 <div class="box-body">
                   <div class="box-body-img">
               

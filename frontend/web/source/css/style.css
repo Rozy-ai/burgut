@@ -166,7 +166,8 @@ ul.navbar-nav li.nav-item a.active:before{
 } 
 
 section{
-  margin-bottom: 100px;
+  padding-bottom: 100px;
+  padding-top: 60px;
 }
 .btn{
   padding: 1rem;
@@ -784,9 +785,7 @@ section.index_tab .card{
   border: none;
 }
 section.index_tab .card-body{
-  
   background: #fff;
-  min-height: 200px;
 }
 section.index_tab .card-title{
   text-transform: uppercase;
@@ -983,7 +982,7 @@ section.breadcrumb_area_two nav{
 
 /*Onumler*/
 .category_cart{
-  height: 250px;
+  min-height: 250px;
   margin-bottom: 10%;
     position: relative;
 }
@@ -1246,34 +1245,34 @@ section.breadcrumb_area_two nav{
     from {top:53%;height: 0;color: rgb(0,0,0);}
     to {top:0;height: 53%;color: rgb(255,255,255);}
 }
-.function_box:hover .overlay_function_box_bottom{
+/*.function_box:hover .overlay_function_box_bottom{
     animation: stor 0.5s;
     height: 50%;
     color: #fff;
-}
-.function_box:hover .box-body-content{
+}*/
+/*.function_box:hover .box-body-content{
     color: #fff;
     transition: 0.5s;
-}
-.function_box:hover .overlay_function_box_top {
+}*/
+/*.function_box:hover .overlay_function_box_top {
     animation: stor2 0.5s;
     height: 50%;
     top: 0;
-}
-.function_box:hover .box-body-img{
+}*/
+/*.function_box:hover .box-body-img{
     color:#fff;
     transition: 0.5s;
-}
+}*/
 .function_box .box-body-img img{
     width: 2em;
 }
 .function_box:hover .box-body-img img{
     filter: invert(1);
 }
-.function_box:hover h3{
+/*.function_box:hover h3{
     color:#fff;
     transition: 0.5s;
-}
+}*/
 .box-body{
     position: relative;
     height: 100%;
@@ -1795,4 +1794,8 @@ section.backend_fa div.col-sm-6{
   color: #fff;
     border: none;
     background: #842029;
+}
+
+ul#myTab{
+  margin-left: 7%;
 }

@@ -199,6 +199,7 @@ return array(
     'Overview' => 'Обзор',
     'About the goods' => 'O товарах',
     'Read more' => 'Подробнее',
+    'Advantages' => 'Наши особенности',
 
 
 );
