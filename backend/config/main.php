@@ -17,6 +17,14 @@ return [
         'user' => [
             'as backend' => 'dektrium\user\filters\BackendFilter',
             'controllerMap' => [
+             'elfinder' => [
+             'class' => 'mihaildev\elfinder\PathController',
+             'access' => ['@'],
+             'root' => [
+             'path' => 'files',
+             'name' => 'Files'
+             ],
+             ],
                 'security' => 'backend\controllers\user\SecurityController',
 //                'recovery' => 'backend\controllers\user\RecoveryController',
                 'admin' => 'backend\controllers\user\AdminController',

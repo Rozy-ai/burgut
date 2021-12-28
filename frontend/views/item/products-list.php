@@ -6,8 +6,27 @@
 
     <div class="container">
         <div class="row">
+                <div class="col-md-3">
+                    <div class="left-sidebar">
+                        <h2><?= yii::t('app','Category') ?></h2>
 
+ <?php 
+ $category = \common\models\wrappers\CategoryWrapper::find()->where(['code' => 'magazin'])->one();
+$catId = $category->id;
+ $cats = \common\models\wrappers\CategoryWrapper::find()->where(['parent_id' => $catId, 'status' => 1])->with(['translations'])->all();
+ ?>
 
+<ul class="catalog category-products">
+    <?php foreach ($cats as $cat) : ?>
+        <li>
+            <a href="<?= $cat->getUrl(); ?>"><?= $cat->name ?></a>
+        </li>
+    <?php endforeach; ?>
+
+</ul> 
+</div>
+</div>
+<div class="col-md-9">
                     <?php
                     $layoutPager = '<div class="clearfix"></div><div class="col-12"><div class="blog-post-pagination text-center">{pager}</div></div>';
 
@@ -36,6 +55,6 @@
                     ]);
                      ?>
 
-
+</div>
 </div>
 </div>

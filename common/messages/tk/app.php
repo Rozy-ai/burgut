@@ -147,7 +147,7 @@ return array (
     'Can not find this blog' => 'Bu blog tapylmady',
     'Can not find this menu' => 'Bu menýu tapylmady',
     'Can not find this news' => 'Bu habar tapylmady',
-    'Category' => 'Kategoriýa',
+    'Category' => 'Katalog',
     'Check out our products' => 'Biziň öňümlerimiz bilen tanyş boluň',
     'Contact with us' => 'Biz bilen habarlaşmak',
     'Create' => 'Döretmek',

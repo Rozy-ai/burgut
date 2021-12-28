@@ -1,7 +1,7 @@
 <?php 
 use yii\helpers\Html;
  ?>
- <section class="about_us_view">
+ <section class="about_us_view" style="padding-top: 0">
  	<div class="container">
  		<div class="row">
  						<?php 
@@ -10,7 +10,7 @@ $catId = $category->id;
 $about = \common\models\wrappers\ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->one();
 ?>
 
- 			<div class="col-md-6">
+ 			<div class="col-md-12">
  				 <h3 style="margin-bottom: 30px"> <?=$about->title?></h3>
                  <p><i><?=$about->description?></i></p>
                         <p style=" margin-bottom: 30px">
@@ -19,9 +19,7 @@ $about = \common\models\wrappers\ItemWrapper::find()->where(['category_id' => $c
 
                         
  			</div>
- 			<div class="col-md-6">
- 				<?=html::img($about->getThumbPath(),['class' => 'about_view_img']) ?>
- 			</div>
+
  		</div>
  	</div>
  </section>

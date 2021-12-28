@@ -27,6 +27,8 @@ class AppAsset extends AssetBundle
        // 'source/js/bootstrap.bundle.min.js.map',
         'source/js/wow.min.js',
         'source/js/slick.min.js',
+        'source/js/jquery.accordion.js',
+        'source/js/jquery.cookie.js',
         'source/js/scripts.js',
     ];
     public $depends = [

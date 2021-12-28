@@ -132,7 +132,7 @@ $this->title = Yii::t('app', 'Home');
 
     <section class="about_us" style="background-color: #EDF8FE">
     <div class="container">
-      <h2><?= yii::t('app' , 'Advantages') ?></h2>
+      <h2 style="color: #00a551;margin-bottom: 3%"><?= yii::t('app' , 'Advantages') ?></h2>
 
 
 
