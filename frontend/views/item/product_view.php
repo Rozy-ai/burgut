@@ -55,23 +55,57 @@
                 <p class="product_desc" style="margin-top: 5%;">
                     <?= $model->description ?>               </p>
                     
-        
                     <?php 
-                       if (!empty($model->price) || !empty($model->skidka)) {
+                       if (!empty($model->Price) || !empty($model->skidka)) {
                           echo "<div class='product_price'>";
-                    if(!empty($model->price)){
-                        echo  yii::t('app', 'Value') . " : ".$model->price." manat";
+                    if(!empty($model->Price)){
+                        echo  yii::t('app', 'Value') . " : ".$model->Price;
                     } 
                       if (!empty($model->skidka)) {
                         echo "<span class='skidka'>".$model->skidka."</span>";
                       }
-                      echo "</div><br><br>";
+                      echo "</div><br>";
                        }
                     ?>
 
 
 
                 <p class="product_desc"> <b><?= yii::t('app', 'Product Category') ?>:</b> <?= $model->category->name ?></p>
+
+                <p class="product_desc"> <b><?= yii::t('app', 'Product Size') ?>:</b> 
+                  <?php 
+                  $sizes = explode(";", $model->Size);
+                   ?>
+                  
+                   
+                  <select class="product_size" name="size" id="size">
+                    <?php foreach ($sizes as $size) : ?>
+                      <option value="<?= $size ?>"><?=$size?></option>
+                    <?php  endforeach; ?> 
+                  </select>
+                  </p>
+
+                  <p style="display: inline-block;" class="product_desc"> <b><?= yii::t('app', 'Product Color') ?>:</b> 
+                  <?php 
+                  $colors = explode(";", $model->Color);
+                   ?>
+                  
+                   
+                  
+                      <ul class="product_color" style="display: inline-block;">
+                    <?php foreach ($colors as $color) : ?>
+                        <li>
+                          <a href="#" style="background-color: <?=$color?>"></a>
+                        </li>
+                      
+                    <?php  endforeach; ?> 
+                      </ul>
+                  
+                  </p>
+
+
+
+
 <!-- <div class="view_select">
     <a class="like-Unlike" href=" -->
     <?php 

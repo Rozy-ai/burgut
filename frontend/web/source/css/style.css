@@ -1317,6 +1317,10 @@ section.breadcrumb_area_two nav{
 .language_box{
     margin-top: -30px;
 }
+.language_box form input{
+  margin-top: 36px;
+  margin-bottom: 6px;
+}
 .language_box ul.dropdown-menu{
     background-color: #00a551;
     padding-left: 10px;
@@ -1908,4 +1912,35 @@ ul.category-products{
 }
 .category-products li a:hover{
   color: #FE980F;
+}
+select.product_size {
+    margin-left: 20px;
+    width: 20%;
+    text-align: center;
+    color: #707070;
+}
+select.product_size option {
+    float: right;
+}
+ul.product_color li a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    cursor: pointer;
+    overflow: hidden;
+}
+ul.product_color {
+      list-style-type: none;
+    margin-bottom: -12px;
+    clear: both;
+}
+ul.product_color li {
+    float: left;
+    margin: 0 8px 8px 0;
+    padding: 1px;
+    border: 1px solid #cccccc;
+    clear: none;
+    border: 1px solid #666666;
+    display: block;
 }
