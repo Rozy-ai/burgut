@@ -340,6 +340,9 @@ $partners = ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'
             return $this->render('search_by_blog', ['items' => $searchModel->searchByCategory([]), 'pages' => $searchModel->pages, 'query' => $_GET['query']]);
         }
         if (isset($_GET['query'])) {
+            if (empty($_GET['query'])) {
+               return $this->redirect(Yii::$app->request->referrer ?: Yii::$app->homeUrl);
+            }
             $searchModel = new ItemLangSearch();
             $searchModel->status = 1;
             $searchModel->query = $_GET['query'];

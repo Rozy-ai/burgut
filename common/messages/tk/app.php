@@ -253,6 +253,8 @@ return array (
     'Privacy Policy' => 'Gizlinlik syýasaty',
     'About the goods' => 'Haryt barada',
     'Advantages' => 'Aýratynlyklarymyz',
+    'Product Size' => 'Ölçegi',
+    'Product Color' => 'Reňki',
 
 );
 

@@ -71,6 +71,8 @@
 
 
                 <p class="product_desc"> <b><?= yii::t('app', 'Product Category') ?>:</b> <?= $model->category->name ?></p>
+                <?php if (!empty($model->Size)) : ?>
+                  
 
                 <p class="product_desc"> <b><?= yii::t('app', 'Product Size') ?>:</b> 
                   <?php 
@@ -84,7 +86,9 @@
                     <?php  endforeach; ?> 
                   </select>
                   </p>
+                <?php endif; ?>
 
+                <?php if (!empty($model->Color)) : ?>
                   <p style="display: inline-block;" class="product_desc"> <b><?= yii::t('app', 'Product Color') ?>:</b> 
                   <?php 
                   $colors = explode(";", $model->Color);
@@ -102,6 +106,7 @@
                       </ul>
                   
                   </p>
+                  <?php endif; ?>
 
 
 
