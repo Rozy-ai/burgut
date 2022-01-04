@@ -200,6 +200,8 @@ return array(
     'About the goods' => 'O товарах',
     'Read more' => 'Подробнее',
     'Advantages' => 'Наши особенности',
+    'Quantity' => 'Количество',
+    'Add to cart' => 'Добавить в корзину',
 
 
 );

@@ -4,6 +4,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -147,8 +148,34 @@ AppAsset::register($this);
 
 
     <?= $content ?>
+    <span class="basket_fixed">
+    <a id="basket" href="<?= Url::to(['cart/add']) ?>" class="btn btn-default cart" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="fa fa-shopping-cart"></i>
+                  </a>
+    </span>
 
     <?= $this->render('//common/footer', ['menuItems' => $menuItems]) ?>
+
+<!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" aria-labelledby="cart" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Sebet</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Dowam etmek</button>
+        <a href="<?= Url::to(['/cart/view']) ?>" class="btn btn-success">Sargamak</a>
+        <button type="button" class="btn btn-danger" onclick="clearCart()">Arassalamak</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script>
 window.cookieconsent.initialise({
@@ -163,6 +190,7 @@ window.cookieconsent.initialise({
   "theme": "classic"
 });
 </script>
+
     <?php $this->endBody() ?>
     </body>
     </html>

@@ -109,7 +109,27 @@ return [
 
 
         'mailer' => [
-            // 'class' => 'yii\swiftmailer\Mailer',
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@frontend/mail',
+            'useFileTransport' => true,//set this property to false to send mails to real email addresses
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.online.tm',
+                'username' => 'test@online.tm',
+                'password' => 'test',
+                // 'port' => '365', online.tm
+                'port' => '465',
+                // 'port' => '587',
+                // 'encryption' => 'tls',
+                'encryption' => 'ssl',
+                'streamOptions' => [
+                    'ssl' => [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => false
+                    ],
+                ],
+            ],
             // 'viewPath' => '@common/mail',
             // 'useFileTransport' => false,//set this property to false to send mails to real email addresses
             // 'transport' => [

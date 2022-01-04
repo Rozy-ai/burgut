@@ -37,5 +37,6 @@ class AppAsset extends AssetBundle
         // 'frontend\assets\MainAsset',
         // 'yii\bootstrap\BootstrapPluginAsset',
         // 'source/js/jquery.min.js',
+        
     ];
 }

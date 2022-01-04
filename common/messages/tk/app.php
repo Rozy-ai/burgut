@@ -255,6 +255,8 @@ return array (
     'Advantages' => 'Aýratynlyklarymyz',
     'Product Size' => 'Ölçegi',
     'Product Color' => 'Reňki',
+    'Quantity' => 'Mukdary',
+    'Add to cart' => 'Sebede goşmak',
 
 );
 

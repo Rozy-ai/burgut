@@ -3,6 +3,49 @@
     use yii\helpers\Url;
      $date = yii::$app->controller->renderDateToWord($model->date_created);
 ?>
+<style>
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  span.qty input {
+    border: 1px solid #DEDEDC;
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    height: 33px;
+    outline: medium none;
+    text-align: center;
+    width: 50px;
+}
+span.qty label {
+    color: #696763;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-right: 5px;
+}
+</style>
+
+
 
 <div class="container">
         <div class="row">
@@ -59,7 +102,7 @@
                        if (!empty($model->Price) || !empty($model->skidka)) {
                           echo "<div class='product_price'>";
                     if(!empty($model->Price)){
-                        echo  yii::t('app', 'Value') . " : ".$model->Price;
+                        echo  yii::t('app', 'Value') . " : ".$model->Price . " TMT";
                     } 
                       if (!empty($model->skidka)) {
                         echo "<span class='skidka'>".$model->skidka."</span>";
@@ -107,6 +150,20 @@
                   
                   </p>
                   <?php endif; ?>
+                  <br>
+                <span class="qty">
+                  
+                  <label><?= yii::t('app','Quantity') ?>:</label>
+                  <input type="text" value="1" id="qty" />
+
+
+
+                  <a href="<?= Url::to(['cart/add', 'id'=>$model->id]) ?>" data-id="<?= $model->id?>" class="btn btn-fefault add-to-cart cart" data-bs-toggle="modal" data-bs-target="#cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <?= yii::t('app','Add to cart') ?>
+                  </a>
+
+                </span>
 
 
 
