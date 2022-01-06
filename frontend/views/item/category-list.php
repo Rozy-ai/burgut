@@ -17,7 +17,7 @@ $categories = \common\models\wrappers\CategoryWrapper::find()->where(['parent_id
     } ?>
 		<div class="col-md-4 col-sm-6 col-12 clear3BoxItem">
     <div class="category_cart">
-        <div class="img_block_cart_category">
+        <div class="img_block_cart_category" id="hover_image">
         
             <a href="<?= $cat->url; ?>">
              
@@ -27,9 +27,14 @@ $categories = \common\models\wrappers\CategoryWrapper::find()->where(['parent_id
                             } else{
                                 echo html::img($image[0],['class' => 'my_img2']);
                             } ?>
+                            <?php 
+                            if (isset($image[1]) && strlen($image[1])>0){
+                                echo html::img($image[1],['class' => 'my_img2 hover_image']);
+                            }
+                             ?>
                 
             </a>
-            <div class="signature"></div>
+          <!--   <div class="signature"></div> -->
        
 
 
@@ -37,7 +42,7 @@ $categories = \common\models\wrappers\CategoryWrapper::find()->where(['parent_id
 
 
         </div>
-            <div class="caption_cart" style="box-sizing:border-box">
+            <div class="caption_cart" style="box-sizing:border-box;z-index: 10">
                 
                     <a href="<?= $cat->url; ?>"> <h4><?=$cat->name?></h4></a>
             

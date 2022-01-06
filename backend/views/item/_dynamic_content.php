@@ -1,4 +1,5 @@
 <?php
+use kartik\color\ColorInput;
 
 $items = [];
 
@@ -29,7 +30,13 @@ if (isset($dynamic_fields)) {
     ]);
     foreach ($dynamic_fields as $field) {
         $field_name = $field->field_name;
+        if ($field_name === 'Color'){
+            echo $form->field($model, $field_name)->widget(ColorInput::classname(), [
+    'options' => ['placeholder' => 'Select color ...'],
+]);
+        }
         if ($field->multilingual == 0 && $field->html_type == 0){
+            
             echo $form->field($model, $field_name)->textInput();
         }
         if ($field->multilingual == 0 && $field->html_type == 1){
@@ -38,6 +45,7 @@ if (isset($dynamic_fields)) {
                     'preset' => 'full',
                 ]);
         }
+        
     }
 }
 ?>

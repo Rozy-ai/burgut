@@ -1,7 +1,28 @@
 $(function() {
     var path = location.pathname;
     $("a[href='" + path + "']").addClass('active');
-})
+});
+
+
+$( '.img_block_cart_category' ).hover(
+  function() {
+     $( this ).addClass( "hvr" );
+  }, function() {
+    $( this ).removeClass( "hvr" );
+  }
+);
+
+// $( '.hvr' ).hover(
+//   function() {
+//     $( 'hvr img.hover_image' ).css({
+//       'z-index' : '2'
+//     });
+//   }, function() {
+//     $( '.hvr img.hover_image' ).css({
+//       'z-index' : '-1'
+//     });
+//   }
+// );
 
     //     $('#show').click(function(){
     //   $(this).css('display','none');
@@ -296,3 +317,5 @@ $('#basket').on('click', function (e) {
     }
   });
 });
+
+

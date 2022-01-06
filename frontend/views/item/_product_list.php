@@ -19,24 +19,30 @@ use yii\helpers\Html;
                             } else{
                                 echo html::img($image[0],['class' => 'my_img2']);
                             } ?>
+                            <?php 
+                            if (isset($image[1]) && strlen($image[1])>0){
+                                echo html::img($image[1],['class' => 'my_img2 hover_image']);
+                            }
+                             ?>
                 
             </a>
-            <div class="signature"></div>
+            <!-- <div class="signature"></div> -->
              </div>
             <div class="caption_cart" style="box-sizing:border-box">
                  <a href="<?= $href ?>"> <h4 class="text-center"><?=$model->title?></h4></a>
             
-                <p>                             <?php
-                  $length = strlen($model->description);
-                  if($length > 100){
-                    $text = mb_substr($model->description, 0, 100);
-                    $firsPos = strripos($text, ' ');
-                    $text = mb_substr($text, 0, $firsPos); 
-                    echo ($text.'...');
-                    } else{
-                        echo ($model->description);
-                    } 
-                   ?></p>
+             <!--    <p>   -->                           <?php
+                  // $length = strlen($model->description);
+                  // if($length > 100){
+                  //   $text = mb_substr($model->description, 0, 100);
+                  //   $firsPos = strripos($text, ' ');
+                  //   $text = mb_substr($text, 0, $firsPos); 
+                  //   echo ($text.'...');
+                  //   } else{
+                  //       echo ($model->description);
+                  //   } 
+                   ?>
+                  <!--  </p> -->
                 
             </div>
         </div>

@@ -68,7 +68,8 @@
     "wbraganca/yii2-videojs-widget": "~1.0",
     "unclead/yii2-multiple-input": "~2.0",
     "egulias/email-validator": "^3.1",
-    "mihaildev/yii2-elfinder": "*"
+    "mihaildev/yii2-elfinder": "*",
+    "kartik-v/yii2-widget-colorinput": "*"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "*",
