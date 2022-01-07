@@ -41,6 +41,7 @@ use yii\widgets\ActiveForm;
 	</table>
 </div>
 <hr>
+<div class="form_basket">
 <?php $form = ActiveForm::begin(); ?>
 <?= $form->field($order, 'name') ?>
 <?= $form->field($order, 'email') ?>
@@ -50,6 +51,7 @@ use yii\widgets\ActiveForm;
 <?= Html::submitButton('Sargamak',['class'=>'btn btn-success','style' => 'margin-bottom:10px; border-radius: 10px;'])  ?>
 <br>
 <?php ActiveForm::end(); ?>
+</div>
 <?php else: ?>
 	<h3>Korzina bosh</h3>
 <?php endif; ?>

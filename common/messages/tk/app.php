@@ -257,6 +257,8 @@ return array (
     'Product Color' => 'Reňki',
     'Quantity' => 'Mukdary',
     'Add to cart' => 'Sebede goşmak',
+    'Address' => 'Salgyňyz',
+    'is required' => 'doly däl',
 
 );
 

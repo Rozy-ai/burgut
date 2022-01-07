@@ -58,7 +58,9 @@ return [
     public function rules()
     {
         return [
-            [['name', 'email', 'phone', 'address'], 'required'],
+            [['name', 'email', 'phone', 'address'], 'required',
+            'message' => '{attribute} '.yii::t('app', 'is required')
+        ],
             [['created_at', 'updated_at'], 'safe'],
             [['qty'], 'integer'],
             [['sum'], 'number'],
@@ -73,10 +75,10 @@ return [
     public function attributeLabels()
     {
         return [
-            'name' => 'Name',
-            'email' => 'Email',
-            'phone' => 'Phone',
-            'address' => 'Address',
+            'name' => yii::t('app','Your name'),
+            'email' => yii::t('app','Email'),
+            'phone' => yii::t('app','Your phone'),
+            'address' => yii::t('app','Address'),
         ];
     }
 }

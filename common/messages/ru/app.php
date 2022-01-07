@@ -202,6 +202,8 @@ return array(
     'Advantages' => 'Наши особенности',
     'Quantity' => 'Количество',
     'Add to cart' => 'Добавить в корзину',
+    'Address' => 'Ваш адрес',
+    'is required' => 'требуется',
 
 
 );

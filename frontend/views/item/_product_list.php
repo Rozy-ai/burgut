@@ -29,7 +29,12 @@ use yii\helpers\Html;
             <!-- <div class="signature"></div> -->
              </div>
             <div class="caption_cart" style="box-sizing:border-box">
-                 <a href="<?= $href ?>"> <h4 class="text-center"><?=$model->title?></h4></a>
+                 <a href="<?= $href ?>"> <h4 class="text-center"><?=$model->title?></h4>
+                  <?php 
+                  if(!empty($model->Price)){
+                        echo "<p>". $model->Price . " TMT". "</p>";
+                    } ?>
+                 </a>
             
              <!--    <p>   -->                           <?php
                   // $length = strlen($model->description);

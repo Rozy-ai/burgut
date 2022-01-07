@@ -983,7 +983,7 @@ section.breadcrumb_area_two nav{
 /*Onumler*/
 .category_cart{
   min-height: 250px;
-  margin-bottom: 30%;
+  margin-bottom: 35%;
     position: relative;
 }
 .category_cart:hover .signature{
@@ -1050,7 +1050,9 @@ section.breadcrumb_area_two nav{
 .caption_cart p{
   transition: 0.2s;
   margin: 0;
-  opacity: 0;
+  font-weight: bold;
+  font-size: 20px;
+  color: #1976d2;
 }
 .caption_cart a{
   text-decoration: none;
@@ -1081,7 +1083,8 @@ section.breadcrumb_area_two nav{
 .caption_cart h4{
     font-size: 20px;
   /*  margin-bottom: 20px;*/
-    font-weight: 600;
+    font-weight: lighter;
+    color: #444444;
 
 }
 .btn_in_detail{
@@ -1973,4 +1976,7 @@ ul.product_color li {
 }
 .hvr img.hover_image{
   z-index: 2!important;
+}
+.form_basket input{
+  margin-bottom: 10px;
 }
