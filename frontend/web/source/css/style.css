@@ -80,6 +80,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   text-decoration: none;
 }
+.header_info a.dropdown-item{
+  color: #000;
+}
 .slider_text_block h1{
   font-family: "MontserratExtraBold","Arial", sans-serif;
 }
@@ -565,7 +568,7 @@ section.blog h2{
   padding: 8px 20px;
   border: 1px solid #000;
   position: absolute;
-    right: 4.4%;
+    right: 4.4%!important;
     top: -90px;
     font-size: 18px;
     color: #8D8D8D;
@@ -1979,4 +1982,9 @@ ul.product_color li {
 }
 .form_basket input{
   margin-bottom: 10px;
+}
+#header_info .dropdown-toggle::after{
+  position: absolute;
+    left: 21%;
+    top: 40%;
 }

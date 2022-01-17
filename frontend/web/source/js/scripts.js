@@ -3,6 +3,14 @@ $(function() {
     $("a[href='" + path + "']").addClass('active');
 });
 
+$( '#header_info' ).hover(
+  function() {
+     $("#header_info ul" ).addClass( "show" );
+  }, function() {
+    $("#header_info ul" ).removeClass( "show" );
+  }
+);
+
 
 $( '.img_block_cart_category' ).hover(
   function() {

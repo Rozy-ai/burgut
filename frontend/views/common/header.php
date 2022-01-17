@@ -28,16 +28,30 @@ switch ($language){
     <div class="container">
       <div class="row header_top">
         <div class="col-sm-0 col-md-6">
-          <p class="header_info">
             <?php 
             $string = $ownerDetails->my_phone;
             $phones   = preg_split('/\s+/', $string); 
              ?>
-           <i class="fa fa-phone"></i> 
-           <?php foreach ($phones as $phone) : ?>
-<a href="tel: <?= $phone ?>"> <?= $phone?> ;</a>
+<div id="header_info" class="dropdown header_info">
+  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+   <i class="fa fa-phone"></i> 
+   <a href="tel:<?=$phones[0] ?>"><?= $phones[0]; ?>
+  </a>
+
+  <?php unset($phones[0]); ?>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <?php foreach ($phones as $phone) : ?>
+      <li>
+<a class="dropdown-item" href="tel:<?=$phone?>"><?= $phone?>;</a>
+</li>
             <?php endforeach; ?>
-            </p>
+  </ul>
+  </a>
+</div>
+           
+           
+ 
        <!--    <p class="header_info"> <i class="fa fa-envelope"> </i> <a href="mailto:<?php// echo $ownerDetails->my_email ?>">
               <?php// echo $ownerDetails->my_email ?></a></p> -->
 
