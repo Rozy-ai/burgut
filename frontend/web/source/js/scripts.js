@@ -52,7 +52,7 @@ $( '.img_block_cart_category' ).hover(
       $(".regular").slick({
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         prevArrow: '<div class="slick_prev_bottom"><span class="line_slick"></span><i class="fa fa-angle-left"></i></div>',
         nextArrow: '<div class="slick_next_bottom"><span class="line_slick"></span><i class="fa fa-angle-right"></i></div>',

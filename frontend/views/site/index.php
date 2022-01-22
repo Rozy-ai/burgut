@@ -43,11 +43,28 @@ $this->title = Yii::t('app', 'Home');
   </div>
 
   <div class="carousel-inner">
-        
-
     <?php foreach ($sliders as $key => $slider): ?>
+<?php $documents = $slider->documents; 
+foreach($documents as $document): ?>
+<?php $slds[] = $document->getThumb() ?>
+<?php endforeach ?>
     <?php 
-        $imagePath = $slider->getThumbPath();
+    $language = yii::$app->language;
+    if ($language == 'ru') {
+      $imagePath = $slds[1];
+    } elseif ($language == 'en') {
+      $imagePath = $slds[2];
+    } else {
+      $imagePath = $slds[0];
+    }
+    unset($slds);
+// switch ($language){
+//     case 'en': $imagePath = $slds[2]; break;
+//     case 'ru': $imagePath = $slds[1]; break;
+//     default: $imagePath = $slds[0]; break;
+// }
+// var_dump($imagePath);die;
+        // $imagePath = $slider->getThumbPath();
  ?>
  <div class="carousel-item <?= ($key==1)?'active':'' ?>" >
       <?=html::img($imagePath,['class'=>'corusel_top_img','alt'=>'...'])?>
@@ -173,6 +190,10 @@ $this->title = Yii::t('app', 'Home');
         <div class="col-md-5 about_data">
           <h3> <?= $ownInfo->my_title ?></h3>
           <p><?= $ownInfo->my_description ?></p>
+          <br><br>
+          <a href="<?= '/item/about' ?>">
+            <button class="btn btn-success"><?= yii::t('app', 'Read more') ?></button>
+          </a>
         </div>
 
       </div>
@@ -200,7 +221,7 @@ $this->title = Yii::t('app', 'Home');
               <h5 class="card-title"><?= $blog->title; ?></h5>
             
               <p class="card-text"><?= $blog->description; ?></p>
-              <p style="position: absolute;bottom: 0"><?= yii::t('app','Read more') ?></p>
+              <p style="position: absolute;bottom: -12px;color: #00a551;"><?= yii::t('app','Read more') ?></p>
               </a>
             </div>
           </div>

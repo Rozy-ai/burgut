@@ -14,6 +14,7 @@
                     <?= $model->title ?>                </h1>
 <!--                 <p class="product_desc">
                     <?= $model->description ?>               </p> -->
+                    <p style="color: #00a551"><?= $date ?></p>
 
 
         <!-- Carusel -->

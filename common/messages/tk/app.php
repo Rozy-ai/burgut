@@ -25,7 +25,7 @@ return array (
 
     //header
     'select_language' => 'Dil saýlaň',
-    'Read more' => 'Dowamyny oka',
+    'Read more' => 'Doly oka',
     'Read all materials' => 'Ähli maglumatlary okamak',
 
 

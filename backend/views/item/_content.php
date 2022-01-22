@@ -2,7 +2,7 @@
 
 $kcfOptions = [
 //    'uploadURL' => Yii::getAlias('@web').'/upload',
-   'uploadURL' => Yii::getAlias('@uploads'),
+   'uploadURL' => Yii::getAlias('/uploads'),
    'access' => [
        'files' => [
            'upload' => true,

@@ -22,7 +22,7 @@ return array(
     'Home' => 'Home page',
     'under_maintaince' => 'The web-site is just under its final development',
     'Latest news' => 'Latest news',
-    'site_name' => 'Ministry of Sport and Youth policy Turkmenistan',
+    'site_name' => 'Textile complex named after S.Niyazov',
     'Federations' => 'Federations',
     'today' => 'Today',
     'yesterday' => 'Yesterday',

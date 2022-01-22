@@ -319,7 +319,7 @@ background: linear-gradient(180deg, rgba(0,112,253,1) 0%, rgba(108,31,216,1) 100
     background-position: 0 -15px;
 }*/
 /*.header-navigation .fa-search:before {
-	content: none;
+  content: none;
 }*/
 .header-navigation .search-box {
     right: 86px;
@@ -717,7 +717,7 @@ section.partners a{
 
 /*index_tab*/
 section.index_tab img{
-  height: 300px;
+  height: 100%;
 }
 /*.card-img-top:hover{
 
@@ -949,7 +949,7 @@ section.breadcrumb_area_two nav{
     object-fit: cover;
 }
 .news_cart_caption{
-   height: 200px;
+   height: 100%;
     padding: 20px 30px 20px 30px;
     display: flex;
     flex-direction: column;
@@ -1193,7 +1193,7 @@ section.breadcrumb_area_two nav{
     font-size: 17px;
 }
 .product_content_block{
-    color: #77839d;
+    color: #000;
     font-size: 17px;
 }
 .product_content_block p{
@@ -1572,14 +1572,14 @@ ul.lang_ul li{
 }
 .parallax {
   /* The image used */
-  background-image: url("../img/Layer-25.jpg");
+  background-image: url("../img/Layer-25.png");
 
 
   /* Set a specific height */
   min-height: 500px; 
 
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+/*  background-attachment: fixed;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

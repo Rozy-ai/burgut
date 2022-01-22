@@ -31,7 +31,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use kartik\date\DatePicker;
 ?>
 
 
@@ -41,7 +41,16 @@ echo $this->render('_content', [
     'form' => $form,
 ])
 ?>
+<?=$form->field($model, 'date_created' )->widget(DatePicker::classname(), [
+    'options' => ['placeholder' => yii::t('app','date')],
+    'pluginOptions' => [
+        'autoclose'=>true,
+        'format' => 'dd-mm-yyyy',
+        'todayHighlight' => true,
 
+    ]
+])->label(yii::t('app','Edit event date'));
+?>
 <?= $form->field($model, 'category_id')->dropDownList($model->getCategoryList(), ['prompt' => '--Select CATEGORY--',
     'options' => $model->getCategoryCodeDataList(),
 //    'onchange' => '
