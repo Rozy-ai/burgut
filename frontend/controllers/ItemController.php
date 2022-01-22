@@ -106,7 +106,6 @@ class ItemController extends CommonController
         $catId = $modelCategory->id;
         $searchModel->parent_category_id =$catId;
         };
-
         if ($modelCategory->code == Null) {
         $searchModel->parent_category_id =2;
         };

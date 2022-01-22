@@ -159,7 +159,7 @@ $new_products = ItemWrapper::find()->where(['parent_category_id' => $catId, 'sta
 $ownInfo = \common\models\OwnerContact::find()->one();
 $category_blog = \common\models\wrappers\CategoryWrapper::find()->where(['code' => 'blog'])->one();
 $catId = $category_blog->id;
-$blogs = \common\models\wrappers\ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->orderBy('id desc')->all();
+$blogs = \common\models\wrappers\ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->orderBy('date_created DESC')->all();
 $category_partners = CategoryWrapper::find()->where(['code' => 'partners'])->one();
 $catId = $category_partners->id;
 $partners = ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'])->with(['documents','translations'])->orderBy('Rand()')->limit(8)->all();

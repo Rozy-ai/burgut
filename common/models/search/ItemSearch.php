@@ -118,7 +118,7 @@ class ItemSearch extends ItemWrapper
 //            ->andFilterWhere(['like', 'content', $this->content])
 //            ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'alias', $this->alias])
-            ->andFilterWhere(['like', 'create_username', $this->create_username]);
+            ->andFilterWhere(['like', 'create_username', $this->create_username])->orderBy('date_created DESC');
 
         return $dataProvider;
     }
