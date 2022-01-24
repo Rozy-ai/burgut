@@ -215,7 +215,7 @@ foreach($documents as $document): ?>
 
           <div class="card" style="width: 18rem;position: relative;">
             <?=html::img($blog->getThumbPath(),['class' => 'card-img-top','alt'=>'$blog->title']) ?>
-            <div class="card-body" style="height: 400px">
+            <div class="card-body" style="height: 360px">
               <span><?= $date ?></span>
               <a href="<?= $blog->url; ?>" style="text-decoration: none; color: #000;"> 
               <h6 class="card-title"><?= $blog->title; ?></h6>
