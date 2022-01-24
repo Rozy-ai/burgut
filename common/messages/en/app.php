@@ -50,6 +50,7 @@ return array(
     'Player' => 'Player',
     'Participants' => 'Participants',
     'Coaches' => 'Coaches',
+    'Site description' => 'Textile complex named after President of Turkmenistan Saparmurat Niyazov is officially registered by Ministry of Finance and Economy of Turkmenistan on 12 may 1997.',
 );
 ?>
 

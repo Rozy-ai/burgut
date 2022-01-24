@@ -184,7 +184,7 @@ return array (
     'Settings' => 'Sazlamalar',
     'Show more' => 'Doly görkez',
     'Sign out' => 'Çykmak',
-    'Site description' => '',
+    'Site description' => 'Gypjak şäherçesindäki Saparmyrat Nyýazow adyndaky dokma toplumy 1997-nji ýylyň 12-nji maýynda dabaraly ýagdaýda açylyp ulanylmaga berildi.',
     'Site keywords' => '',
     'Site name' => 'Gypjakdaky Saparmyrat Nyýazow adyndaky dokma toplumy',
     'Slider' => '',

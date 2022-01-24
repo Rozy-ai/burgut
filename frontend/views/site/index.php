@@ -188,8 +188,8 @@ foreach($documents as $document): ?>
     <div class="container">
       <div class="row">
         <div class="col-md-5 about_data">
-          <h3> <?= $ownInfo->my_title ?></h3>
-          <p><?= $ownInfo->my_description ?></p>
+          <h3> <?= yii::t('app','About Us')  ?></h3>
+          <p><?= yii::t('app','Site description') ?></p>
           <br><br>
           <a href="<?= '/item/about' ?>">
             <button class="btn btn-success"><?= yii::t('app', 'Read more') ?></button>
@@ -215,12 +215,13 @@ foreach($documents as $document): ?>
 
           <div class="card" style="width: 18rem;position: relative;">
             <?=html::img($blog->getThumbPath(),['class' => 'card-img-top','alt'=>'$blog->title']) ?>
-            <div class="card-body">
+            <div class="card-body" style="height: 400px">
               <span><?= $date ?></span>
               <a href="<?= $blog->url; ?>" style="text-decoration: none; color: #000;"> 
-              <h5 class="card-title"><?= $blog->title; ?></h5>
+              <h6 class="card-title"><?= $blog->title; ?></h6>
             
-              <p class="card-text"><?= $blog->description; ?></p>
+              <p class="card-text" style="max-height: 60%;
+    font-size: 14px;"><?= $blog->description; ?></p>
               <p style="position: absolute;bottom: -12px;color: #00a551;"><?= yii::t('app','Read more') ?></p>
               </a>
             </div>

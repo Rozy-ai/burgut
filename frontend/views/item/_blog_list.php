@@ -13,9 +13,9 @@ use yii\helpers\Html;
             </a>
             <div class="news_cart_caption">
                 <a href="<?= $model->url; ?>"> 
-                    <h4><?=$model->title?></h4>
+                    <h6><?=$model->title?></h6>
                 </a>
-                <p><?=$model->description?></p>
+                <p style="font-size: 14px"><?=$model->description?></p>
                 <div class="news_cart_divider"></div>
                 <span class="new_date"><?= $date ?></span>
             </div>

@@ -949,7 +949,7 @@ section.breadcrumb_area_two nav{
     object-fit: cover;
 }
 .news_cart_caption{
-   height: 100%;
+   height: 300px;
     padding: 20px 30px 20px 30px;
     display: flex;
     flex-direction: column;
