@@ -81,7 +81,7 @@ return [
             'enableLanguageDetection' => false,
             'enableLanguagePersistence' => false,
             'rules' => array (
-
+                'rss/' => 'site/rss', //rss 
                 'm/<module:\w+>/<controller:\w+>/<id:\d+>' => '<module>/<controller>/view',
                 'm/<module:\w+>/<controller:\w+>/<action:[\w\-\/]+>' => '<module>/<controller>/<action>',
                 'm/<module:\w+>/<controller:\w+>/<action:[\w\-\/]+>/<id:\d+>' => '<module>/<controller>/<action>',

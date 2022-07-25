@@ -28,6 +28,8 @@ use frontend\models\ContactForm;
 use common\components\Common;
 use yii\web\ViewAction;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
+use yii\helpers\StringHelper;
 
 ini_set('max_execution_time', 6000);
 
@@ -187,11 +189,57 @@ $partners = ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'
         ]);
     }
 
-
-//     public function actionSubscription(){
-//         $model = Yii::$app->request->post();
-//         var_dump($model);
-//     if ($model->validate()){
+    public function actionRss()
+    {
+        $category_blog = CategoryWrapper::find()->where(['code' => 'blog'])->one();
+        $catId = $category_blog->id;
+        $dataProvider = new \yii\data\ActiveDataProvider([
+            'query' => ItemWrapper::find()
+            ->where(['category_id' => $catId, 'status' => '1'])->with(['documents','translations'])
+            ->orderBy(['date_created' => SORT_DESC]),
+            'pagination' => [
+                'pageSize' => 10
+            ],
+        ]);
+        $response = Yii::$app->getResponse();
+        $headers = $response->getHeaders();
+        
+        $headers->set('Content-Type', 'application/rss+xml; charset=utf-8');
+        
+        $response->content = \Zelenin\yii\extensions\Rss\RssView::widget([
+            'dataProvider' => $dataProvider,
+            'channel' => [
+                'title' => 'Yiico – статьи по Yii2 и Yii',
+                'link' => Url::toRoute('/', true),
+                'description' => 'Статьи ',
+                'language' => Yii::$app->language
+            ],
+            'items' => [
+                'title' => function ($model, $widget) {
+                   // var_dump('/item/'.$model->id);die;
+                    return $model->title;
+                    },
+                'description' => function ($model, $widget) {
+                        return StringHelper::truncateWords($model->description, 50);
+                    },
+                'link' => function ($model, $widget) {
+                        return  Url::home(true).'/item/'.$model->id;
+                    },
+                'guid' => function ($model, $widget) {
+                    return  Url::home(true).'/item/'.$model->id;
+                },
+                'pubDate' => function ($model, $widget) {
+                    $date = \DateTime::createFromFormat('Y-m-d H:i:s', $model->date_created);
+                    return $date->format(DATE_RSS);
+                },
+                ]
+            ]);
+        }
+        
+        //     public function actionSubscription(){
+            //         $model = Yii::$app->request->post();
+            //         var_dump($model);
+            //     if ($model->validate()){
 //         $email = Html::encode($model->email);
 //         $model->email = $email;
 //         $model->addtime = (string) time();
@@ -201,7 +249,7 @@ $partners = ItemWrapper::find()->where(['category_id' => $catId, 'status' => '1'
 //             exit;
 //         } 
 //     } else {
-//         echo "<p style='color:red'>Ошибка оформления подписки.</p>";
+    //         echo "<p style='color:red'>Ошибка оформления подписки.</p>";
 //         //Проверяем наличие фразы в массиве ошибки
 //         if(strpos($model->errors['email'][0], 'уже занято') !== false) {
 //             echo "<p style='color:red'>Вы уже подписаны!</p>";
